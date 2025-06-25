@@ -14,5 +14,4 @@ This repository provides a simple and secure JWT-based authentication system bui
 
 ---
 
-## 🏗️ Project Structure
 
