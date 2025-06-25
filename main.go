@@ -7,6 +7,7 @@ import (
 	"github.com/Triptiverma003/go-gin-auth/database"
 	routes "github.com/Triptiverma003/go-gin-auth/router"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/cors"
 	"github.com/joho/godotenv"
 )
 
@@ -41,5 +42,12 @@ func main () {
 	routes.SetUpRoutes(router)
 
 	log.Fatal(router.Run(":" + port))
+
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"*"},
+		AllowMethods:     []string{"PUT", "PATCH", "GET", "POST", "DELETE"},
+		AllowHeaders:     []string{"Origin", "Auth-token", "token", "Content-type"},
+		AllowCredentials: true,
+	}))
 
 }
