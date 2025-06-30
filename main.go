@@ -91,7 +91,7 @@ func main() {
 
 	// CORS configuration
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:3000"}, // Replace with Vercel domain on deploy
+		AllowOrigins:     []string{"https://blogi-zeta.vercel.app/login", "https://blogi-zeta.vercel.app"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
 		AllowHeaders:     []string{"Origin", "Auth-token", "token", "Content-Type"},
 		AllowCredentials: true,
